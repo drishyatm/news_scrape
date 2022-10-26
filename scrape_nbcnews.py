@@ -18,4 +18,4 @@ if __name__ == "__main__":
     headlines = soup.find_all('span',{'class':'tease-card__headline'})
     web_scarp(headlines)
     data_nbc = pd.DataFrame(headlines)
-    data_nbc.to_csv("nbc_business.csv",mode='a', index= True,header=False)    
+    data_nbc.to_csv("nbc_news.csv",mode='a', index= True,header=False)    
