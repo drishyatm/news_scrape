@@ -12,7 +12,7 @@ jobs:
         with:
           python-version: 3.8 #install the python needed
       - name: install python dependencies
-        uses: py-actions/py-depedency-install@v2
+        uses: py-actions/py-dependency-install@v2
         with:
           path: "requirements.txt"
           
