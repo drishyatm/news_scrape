@@ -24,7 +24,16 @@ jobs:
       - name: commit
         run: |
           # Stage the file, commit and push
+          git config --global user.email "drishya.tm@qxf2.com"
+          git config --global user.name "drishyatm"
           git add nbc_news.csv headline_nytimes.csv
-          git commit -m "new date commit"
-          git push origin main
+          git commit -m "news collection commit"
+          
+          - name: Push changes # push the output folder to your repo
+          uses: ad-m/github-push-action@master
+          with:
+          
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
+
 
