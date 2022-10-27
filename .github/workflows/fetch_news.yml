@@ -1,6 +1,5 @@
 on:
-  schedule:
-    - cron: "0 */4 * * *"
+  workflow_run:
 jobs:
   build:
     runs-on: ubuntu-latest
