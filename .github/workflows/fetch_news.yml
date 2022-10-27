@@ -16,6 +16,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: execute py script # run sj-gobierno.py to get the latest data
-        run: python scrape_nbcnews.py
+      - name: execute py script # run both the script get the latest data
+        run: |
+          python scrape_nbcnews.py
+          python headline_fetch_nytimes.py
 
