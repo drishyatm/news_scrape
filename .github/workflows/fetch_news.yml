@@ -20,4 +20,11 @@ jobs:
         run: |
           python scrape_nbcnews.py
           python headline_fetch_nytimes.py
+      
+      - name: commit
+        run: |
+          # Stage the file, commit and push
+          git add nbc_news.csv headline_nytimes.csv
+          git commit -m "new date commit"
+          git push origin main
 

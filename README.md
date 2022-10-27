@@ -18,4 +18,5 @@ Second script is using the Beautifulsoup
 
 python scrape_nbcnews.py
 
-Running the script will create a nbc_news.csv with the data of only heading
+Running the script will create a nbc_news.csv with the data of only heading.
+
