@@ -3,6 +3,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: checkout repo content
@@ -26,14 +28,11 @@ jobs:
           # Stage the file, commit and push
           git config --global user.email "drishya.tm@qxf2.com"
           git config --global user.name "drishyatm"
+          git remote set-url --push origin https://drishyatm:$GITHUB_TOKEN@github.com/news_scrape
           git add nbc_news.csv headline_nytimes.csv
           git commit -m "news collection commit"
+          git push
           
-          - name: Push changes # push the output folder to your repo
-          uses: ad-m/github-push-action@master
-          with:
-          branch: main #ignore if your branch is master
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          force: true
+  
 
 
