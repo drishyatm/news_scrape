@@ -23,16 +23,9 @@ jobs:
           python scrape_nbcnews.py
           python headline_fetch_nytimes.py
       
-      - name: commit
-        run: |
-          # Stage the file, commit and push
-          git config --global user.email "drishya.tm@qxf2.com"
-          git config --global user.name "drishyatm"
-          git remote set-url --push origin https://drishyatm:$GITHUB_TOKEN@github.com/news_scrape
-          git add nbc_news.csv headline_nytimes.csv
-          git commit -m "news collection commit"
-          git push
-          
-  
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          default_author: github_actions
 
 
