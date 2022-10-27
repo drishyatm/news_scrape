@@ -28,7 +28,7 @@ if len(urls) > 0:
 filename = 'headline_nytimes.csv'
 with open(filename, 'a', newline='') as f:
     w = csv.DictWriter(f,['Title Number','Title Name','Date Published'])
-    w.writeheader()
+    #w.writeheader()
      
     w.writerows(titles_list)
     time.sleep(0.33)
